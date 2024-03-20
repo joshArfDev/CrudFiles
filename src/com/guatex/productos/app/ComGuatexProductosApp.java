@@ -144,6 +144,8 @@ public class ComGuatexProductosApp {
         }
         
         
+        System.out.println("Hola mundo agregé extensiones y directorios no deseados.");
+        
     }
 
 }
