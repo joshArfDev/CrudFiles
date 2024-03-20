@@ -50,17 +50,15 @@ public class ComGuatexProductosApp {
 
                     case 1:
                         System.out.println("\n---- BUSCAR ----- \n");
+                        buscarDato("C:\\Users\\GUATEX\\Documents\\NetBeansProjects\\com.guatex.productos.app\\src\\com\\guatex\\productos\\Datos\\DB.txt");
                         break;
                     case 2:
                         System.out.println("\n---- LISTAR ----- \n");
-
-                        muestraDatos();
-
+                        muestraDatos("C:\\Users\\GUATEX\\Documents\\NetBeansProjects\\com.guatex.productos.app\\src\\com\\guatex\\productos\\Datos\\DB.txt");
                         break;
                     case 3:
                         System.out.println("\n---- INSERTAR ----- \n");
                         insertaDatos();
-
                         break;
                     case 4:
                         System.out.println("\n---- MODIFICAR ----- \n");
@@ -136,15 +134,73 @@ public class ComGuatexProductosApp {
 
         System.out.println("\nMOSTRANDO DATOS INGRESADOS");
         String cadena;
-        
+
         FileReader reader = new FileReader(archivo);
         BufferedReader bReader = new BufferedReader(reader);
-        while( ( cadena = bReader.readLine() )!= null ) {
+        while ((cadena = bReader.readLine()) != null) {
             System.out.println(cadena);
         }
-        
-        
-        System.out.println("Hola mundo agregé extensiones y directorios no deseados.");
+
+        bReader.close();
+    }
+
+    public static void buscarDato(String archivo) throws FileNotFoundException, IOException {
+
+//        FileReader reader = new FileReader(archivo);
+//        BufferedReader bReader = new BufferedReader(reader);
+//        
+//        Scanner identificador = new Scanner(new File(archivo));
+//        System.out.println("\nProducto a buscar: ");
+//        String match = scanner.next();
+//            
+//        while ( identificador.hasNext() ) {
+//
+//            String texto = identificador.nextLine();
+//            
+//            if (texto.contains(match)) {
+//                
+//                System.out.println();
+//            }
+//        }
+//        
+//        bReader.close();
+
+         Scanner buscar = new Scanner(System.in);
+         String producto;
+
+          try {
+              
+              do {                  
+                  BufferedReader bReader = new BufferedReader(new FileReader(archivo));
+                  System.out.println("Producto a buscar: ");
+                  producto = buscar.nextLine();
+                  
+                  String data = "";
+                  boolean productoEcontrado = false;
+                  
+                  while (( data = bReader.readLine()) != null ) {                      
+                      if (data.equalsIgnoreCase(producto)) {
+                          
+                          System.out.println(data);
+                          
+                          for (int i = 0; i < 4; i++) {
+                              System.out.println(bReader.readLine());
+                          }
+                          
+                          productoEcontrado = true;
+                          break;
+                      }
+                  }
+                  
+                  if ( !productoEcontrado ) System.out.println("El producto no existe");
+                 
+                  System.out.println("¿Quieres buscar otro producto? ");
+                  producto = buscar.nextLine();
+              } while ( producto.equalsIgnoreCase("si") );
+            
+        } catch (Exception e) {
+              System.out.println("Error ");
+        }
         
     }
 

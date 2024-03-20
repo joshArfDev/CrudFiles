@@ -33,3 +33,24 @@ Descripción: LAMPARA DE ALTA GAMA PARA DEPORTISTAS
 Precio en bodega: Q.300.0
 Precio de venta: Q.500.0
 Cantidad disponible: 100
+
+----------------------
+Nombre: MONITOR CURVADO
+Descripción: MONITOR PARA GAMERS Y/O PROGRAMADORES
+Precio en bodega: Q.2500.0
+Precio de venta: Q.3600.0
+Cantidad disponible: 800
+
+----------------------
+Nombre: LAPIZ
+Descripción: HERRAMIENTA PARA PODER ESCRIBIR EN CUALQUIER PAPE
+Precio en bodega: Q.5.5
+Precio de venta: Q.7.0
+Cantidad disponible: 500
+
+----------------------
+Nombre: PAPEL
+Descripción: PAPEL PAPEL
+Precio en bodega: Q.20.0
+Precio de venta: Q.30.0
+Cantidad disponible: 80
