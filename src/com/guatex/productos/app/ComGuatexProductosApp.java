@@ -58,7 +58,7 @@ public class ComGuatexProductosApp {
 
                         break;
                     case 3:
-
+                        System.out.println("\n---- INSERTAR ----- \n");
                         insertaDatos();
 
                         break;
@@ -95,7 +95,6 @@ public class ComGuatexProductosApp {
 
         EProducto producto = new EProducto();
 
-        System.out.println("\n---- INSERTAR ----- \n");
         System.out.println("Ingrese nombre del producto:");
         producto.setNombreProducto(scanner.nextLine());
 
@@ -133,9 +132,18 @@ public class ComGuatexProductosApp {
         System.out.println("\nDatos del producto ingresado:\n" + datosProducto);
     }
 
-    public static void muestraDatos() throws FileNotFoundException, IOException {
+    public static void muestraDatos(String archivo) throws FileNotFoundException, IOException {
 
-        System.out.println("HOLA MUESTRA DATOS");
+        System.out.println("\nMOSTRANDO DATOS INGRESADOS");
+        String cadena;
+        
+        FileReader reader = new FileReader(archivo);
+        BufferedReader bReader = new BufferedReader(reader);
+        while( ( cadena = bReader.readLine() )!= null ) {
+            System.out.println(cadena);
+        }
+        
+        
     }
 
 }
