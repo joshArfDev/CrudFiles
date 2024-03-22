@@ -7,6 +7,7 @@ package com.guatex.productos.util;
 
 import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 /**
  *
@@ -16,6 +17,7 @@ public class linkedList {
     
     public static void main(String[] args) {
         
+        Scanner sc = new Scanner(System.in);
         LinkedList<String> products = new LinkedList<>();
         
         products.add("Shampoo");
@@ -40,5 +42,22 @@ public class linkedList {
         String remove = products.remove(1);
         System.out.println("LinkeList Updated: " + products);
         
+        
+        System.out.println("\n----------------------------\n");
+        
+        System.out.println("Ingrese producto a buscar: ");
+        String find = sc.nextLine();
+       
+        int index = products.indexOf(find);
+        
+        if (index != -1) {
+            System.out.println("Producto en la posición " + index);
+            System.out.println("\n y su contenido: " + products.contains(find));
+        } else {
+            System.out.println("Producto no encontrado");
+        }
+        
     }
+    
+    
 }
