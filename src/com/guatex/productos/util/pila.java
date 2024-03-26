@@ -5,6 +5,7 @@
  */
 package com.guatex.productos.util;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -14,21 +15,40 @@ import java.util.Stack;
 public class pila {
 
     public static void main(String[] args) {
-         Stack myStack = new Stack<>();
 
-        System.out.println("Is my stack empty? " + myStack.empty());
-// pushing elements into stack
-        myStack.add("Orange Ball");
-        myStack.add("Violet Ball");
-        myStack.add("Green Ball");
+        Scanner sc = new Scanner(System.in);
+        Stack myStack = new Stack<>();
 
-//prints elements of the stack
-        System.out.println("Elements in Stack: " + myStack);
-        System.out.println("Is my stack empty? " + myStack.empty());
-        while (!myStack.isEmpty()) {
+        String opcion = "";
+
+        do {
+
+            System.out.println("\nIngresa elemento para insertar a la pila: ");
+            String element = sc.nextLine();
+            myStack.add(element);
+
+            System.out.println("\n---------------------------");
+            System.out.println("Desea insertar otro elemento a la pila: (S/N)");
+            opcion = sc.nextLine();
+
+            if (!opcion.equalsIgnoreCase("s")) {
+                System.out.println("\n¡Por favor, si deseas seguir insertando escribe Si | S!");
+                System.out.println("Desea insertar otro elemento a la pila: (S/N)");
+                opcion = sc.nextLine();
+            }
+
+        } while (!opcion.equalsIgnoreCase("No") && !opcion.equalsIgnoreCase("N"));
+
+        System.out.println("\nTu pila actual " + myStack);
+
+        System.out.println("\n\nEl primer elemento que se eliminará será: " + myStack.peek());
+
+        while (!myStack.empty()) {
             myStack.pop();
-            System.out.println("Elements in Stack: " + myStack);
-            System.out.println("Is my stack empty? " + myStack.empty());
+            System.out.println("\nTu pila actual despues de hacer POP" + myStack);
         }
+
+        sc.close();
+
     }
 }
