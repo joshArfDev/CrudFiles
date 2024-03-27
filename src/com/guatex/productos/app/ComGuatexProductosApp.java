@@ -161,9 +161,9 @@ public class ComGuatexProductosApp {
                 break;
             }
 
-            if (!encontrado) {
-                System.out.println("Producto no encontrado");
-            }
+        }
+        if (!encontrado) {
+            System.out.println("Producto no encontrado");
         }
     }
 
@@ -256,7 +256,7 @@ public class ComGuatexProductosApp {
                 System.out.println("Producto no encontrado");
             }
         }
-        
+
         System.out.println("\n producto eliminado");
 
     }
